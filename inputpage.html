@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>date picker: HTML 5</title>
+        <script src="jquery-3.2.1.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        
+        
+    </head>
+    
+<body>
+        
+        <form>
+  <label> Date and Time:</label>
+            <input type="datetime-local"/><br>
+            </form>
+        
+
+
+    
+        <button id="notification">COOK THIS!</button>
+    
+    <script>
+    document.addEventListener('deviceready', function () {
+    
+
+    cordova.plugins.notification.local.on("click", function (notification) {
+        cordova.plugins.notification.local.schedule({
+        title: "New Message",
+    message: "Hi, are you ready? We are waiting.",
+    sound: "file://sounds/message.mp3",
+    icon: "http://my.domain.de/avatar/user#id=123"
+    });
+        
+        
+}, false);
+    </script>
+    
+    
+   </body>
+    
+            
+            
+</html>
